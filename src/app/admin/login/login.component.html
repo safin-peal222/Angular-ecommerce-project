@@ -1,0 +1,26 @@
+<h1>Login Page</h1>
+
+<form  #loginUserForm="ngForm" (ngSubmit)="getLoginUser(loginUserForm.value);loginUserForm.reset()">
+    
+    
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Please Enter Your Email</mat-label>
+        <input matInput placeholder="Placeholder" name="email" ngModel>
+     
+        <mat-hint>correct email</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Please Enter Your Password</mat-label>
+        <input matInput placeholder="Placeholder" name="password" ngModel>
+     
+        
+      </mat-form-field>
+    </p>
+  
+     <button mat-raised-button type="submit" color="primary">Login</button>
+    
+  </form>
+  

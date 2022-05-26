@@ -1,0 +1,39 @@
+<form action="" #productForm="ngForm" (ngSubmit)="getProduct(productForm.value);productForm.reset()">
+    
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Please Enter Your Category</mat-label>
+        <input matInput placeholder="Placeholder" name="category" ngModel>
+     
+        <mat-hint>Category</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Please Enter Your Image Url</mat-label>
+        <input matInput placeholder="Placeholder" name="imgUrl" ngModel>
+     
+        <mat-hint>correct email</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Please Enter Your Description</mat-label>
+        <input matInput placeholder="Placeholder" name="description" ngModel>
+     
+        <mat-hint>correct email</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Please Enter Your Price</mat-label>
+        <input matInput placeholder="Placeholder" name="price" ngModel>
+     
+        <mat-hint>correct email</mat-hint>
+      </mat-form-field>
+    </p>
+  
+    <button mat-raised-button type="submit" color="primary">Add Product</button>
+    
+  </form>
+  

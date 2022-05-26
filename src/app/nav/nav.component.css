@@ -1,0 +1,9 @@
+.navbar {
+  justify-content: space-between;
+}
+
+span a {
+  padding: 1rem;
+  color: white;
+
+}
