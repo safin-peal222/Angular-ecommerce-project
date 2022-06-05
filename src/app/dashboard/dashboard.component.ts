@@ -16,18 +16,7 @@ export class DashboardComponent implements OnInit {
   products: any;
 
   ngOnInit(): void {
-    this.productService.getConfig()
-      .subscribe((res: any) =>
-
-        this.products = res, (err: any) => {
-          if (err instanceof HttpErrorResponse) {
-            if (err.status === 401) {
-              this.router.navigate(['/login'])
-            }
-          }
-        }
-
-      );
+    this.getProducts();
   }
   gotoAddProduct() {
     this.router.navigate(['add-product']);
@@ -35,15 +24,21 @@ export class DashboardComponent implements OnInit {
   gotoShowProduct() {
     this.router.navigate(['all-data']);
   }
+  getProducts() {
+    this.productService.getConfig().subscribe((res: any) => {
+      this.products = res
+    })
+
+  }
   // showConfig() {
 
   // }
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+

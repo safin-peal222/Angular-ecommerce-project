@@ -12,7 +12,7 @@ export class DataComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.item.category)
+    // console.log(this.item.category)
   }
 
 }

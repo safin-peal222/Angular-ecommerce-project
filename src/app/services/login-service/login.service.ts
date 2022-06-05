@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginService {
-  url = "http://localhost:5000/user/login";
+  url = "https://server-59.herokuapp.com/user/login";
   constructor(private http: HttpClient) { }
   saveLoginUser(logUser: any) {
     return this.http.post(this.url, logUser)
@@ -15,7 +15,7 @@ export class LoginService {
     return localStorage.getItem('token');
   }
   deletedContact(contactId: any) {
-    const deletedData = 'http://localhost:5000/admin/delete-products';
+    const deletedData = 'https://server-59.herokuapp.com/admin/delete-products';
     return this.http.post(deletedData, { id: contactId });
   }
 }

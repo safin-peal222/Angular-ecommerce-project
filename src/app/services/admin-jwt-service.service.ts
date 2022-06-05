@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AdminJwtServiceService {
-  url = "http://localhost:5000/user/signup";
+  url = "https://server-59.herokuapp.com/user/signup";
 
 
   constructor(private http: HttpClient) { }

@@ -6,15 +6,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AddProductService {
-  url = "http://localhost:5000/admin/add-products";
-
+  url = "https://server-59.herokuapp.com/admin/add-products";
+  // https://server-59.herokuapp.com
   constructor(private http: HttpClient) { }
 
   getProduct(product: any) {
     return this.http.post(this.url, product);
   }
   updateProduct(product: any) {
-    return this.http.post("http://localhost:5000/admin/update-products", product);
+    return this.http.post("https://server-59.herokuapp.com/admin/update-products", product);
   }
 
   getConfig() {
@@ -22,7 +22,7 @@ export class AddProductService {
   }
 
   getCartData(cartItems: any) {
-    return this.http.post("http://localhost:5000/user/cart-data", cartItems);
+    return this.http.post("https://server-59.herokuapp.com/user/cart-data", cartItems);
 
   }
 
