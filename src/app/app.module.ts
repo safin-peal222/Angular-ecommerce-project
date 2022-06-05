@@ -16,6 +16,10 @@ import { AuthGuard } from './auth.guard';
 import { AddAdminProductComponent } from './products/add-admin-product/add-admin-product.component';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AllDataComponent } from './all-data/all-data.component';
+import { DataComponent } from './data/data.component';
+import { RouterModule } from '@angular/router';
+import { EditDataComponent } from './edit-data/edit-data.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,10 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     DashboardComponent,
     MycartComponent,
     AddAdminProductComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    AllDataComponent,
+    DataComponent,
+    EditDataComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,27 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     MatCheckboxModule,
     MaterialModule,
     FormsModule, ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: 'login', component: LoginComponent,
+
+      },
+      { path: 'register', component: RegisterComponent },
+      { path: 'my-cart', component: MycartComponent, canActivate: [AuthGuard] },
+      // { path: 'add-product', component: AddAdminProductComponent },
+      {
+        path: 'dashboard', component: DashboardComponent
+      },
+
+      { path: 'add-product', component: AddAdminProductComponent },
+      { path: 'all-data', component: AllDataComponent },
+      { path: 'edit/:id', component: EditDataComponent },
+
+
+
+      { path: '', redirectTo: '/', pathMatch: 'full' },
+    ])
   ],
   providers: [AuthGuard, {
     provide: HTTP_INTERCEPTORS,

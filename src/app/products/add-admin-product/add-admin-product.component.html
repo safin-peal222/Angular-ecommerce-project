@@ -1,9 +1,9 @@
-<form action="" #productForm="ngForm" (ngSubmit)="getProduct(productForm.value);productForm.reset()">
+<form action="" #productForm="ngForm" (ngSubmit)="productForm.reset()">
     
     <p>
       <mat-form-field appearance="outline">
         <mat-label>Please Enter Your Category</mat-label>
-        <input matInput placeholder="Placeholder" name="category" ngModel>
+        <input matInput placeholder="Placeholder" name="category" [(ngModel)]="category">
      
         <mat-hint>Category</mat-hint>
       </mat-form-field>
@@ -11,7 +11,7 @@
     <p>
       <mat-form-field appearance="outline">
         <mat-label>Please Enter Your Image Url</mat-label>
-        <input matInput placeholder="Placeholder" name="imgUrl" ngModel>
+        <input matInput placeholder="Placeholder" name="imgUrl" [(ngModel)]="imgUrl">
      
         <mat-hint>correct email</mat-hint>
       </mat-form-field>
@@ -19,7 +19,7 @@
     <p>
       <mat-form-field appearance="outline">
         <mat-label>Please Enter Your Description</mat-label>
-        <input matInput placeholder="Placeholder" name="description" ngModel>
+        <input matInput placeholder="Placeholder" name="description" [(ngModel)]="description">
      
         <mat-hint>correct email</mat-hint>
       </mat-form-field>
@@ -27,13 +27,13 @@
     <p>
       <mat-form-field appearance="outline">
         <mat-label>Please Enter Your Price</mat-label>
-        <input matInput placeholder="Placeholder" name="price" ngModel>
+        <input matInput placeholder="Placeholder" name="price" [(ngModel)]="price">
      
         <mat-hint>correct email</mat-hint>
       </mat-form-field>
     </p>
   
-    <button mat-raised-button type="submit" color="primary">Add Product</button>
-    
+    <button mat-raised-button type="submit" color="primary" *ngIf="!editdata" (click)="getProduct()">Add Product</button>
+    <button mat-raised-button type="submit" color="primary" *ngIf="editdata" (click)="updateProduct()">Update Product</button>
   </form>
   

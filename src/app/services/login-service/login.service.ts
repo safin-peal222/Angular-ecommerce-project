@@ -14,4 +14,8 @@ export class LoginService {
   getToken() {
     return localStorage.getItem('token');
   }
+  deletedContact(contactId: any) {
+    const deletedData = 'http://localhost:5000/admin/delete-products';
+    return this.http.post(deletedData, { id: contactId });
+  }
 }

@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatHint } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 
 const matComponents = [
@@ -12,7 +14,11 @@ const matComponents = [
   MatToolbarModule,
   MatFormFieldModule,
   MatInputModule,
-  MatGridListModule
+  MatGridListModule,
+  MatTableModule,
+  MatPaginatorModule,
+
+
 
 ]
 
@@ -26,7 +32,9 @@ const matComponents = [
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule
 
   ],
   exports: [
@@ -36,7 +44,9 @@ const matComponents = [
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule
 
   ]
 })

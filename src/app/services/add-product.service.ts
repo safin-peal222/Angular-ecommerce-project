@@ -13,9 +13,17 @@ export class AddProductService {
   getProduct(product: any) {
     return this.http.post(this.url, product);
   }
+  updateProduct(product: any) {
+    return this.http.post("http://localhost:5000/admin/update-products", product);
+  }
 
   getConfig() {
     return this.http.get(this.url);
+  }
+
+  getCartData(cartItems: any) {
+    return this.http.post("http://localhost:5000/user/cart-data", cartItems);
+
   }
 
 }

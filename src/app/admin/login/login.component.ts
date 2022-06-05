@@ -29,10 +29,19 @@ export class LoginComponent implements OnInit {
 
         if (res.token) {
           this.decoded = jwt_decode(res.token);
+          console.log(this.decoded.userRole);
           localStorage.setItem("token", res.token);
+          this.getUserToken();
           this.router.navigate(['my-cart']);
         }
       })
+  }
+
+  getUserToken() {
+    const token: any = localStorage.getItem('token');
+    const decoded = jwt_decode(token);
+    console.log(decoded)
+
   }
 
 }
