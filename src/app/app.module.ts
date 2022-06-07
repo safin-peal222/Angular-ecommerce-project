@@ -60,7 +60,7 @@ import { EditDataComponent } from './edit-data/edit-data.component';
 
 
 
-      { path: '', redirectTo: '/', pathMatch: 'full' },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ])
   ],
   providers: [AuthGuard, {
