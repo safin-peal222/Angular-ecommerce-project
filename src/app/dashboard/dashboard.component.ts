@@ -14,9 +14,10 @@ export class DashboardComponent implements OnInit {
 
   constructor(private productService: AddProductService, private router: Router, private route: ActivatedRoute) { }
   products: any;
-
+  isLogin: boolean = false;
   ngOnInit(): void {
     this.getProducts();
+    this.checkLogIn();
   }
   gotoAddProduct() {
     this.router.navigate(['add-product']);
@@ -28,6 +29,13 @@ export class DashboardComponent implements OnInit {
     this.productService.getConfig().subscribe((res: any) => {
       this.products = res
     })
+
+  }
+  checkLogIn() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.isLogin = true;
+    }
 
   }
   // showConfig() {

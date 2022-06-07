@@ -7,9 +7,10 @@
       
     </div>
   </div> -->
-
-  <button class="btn btn-success" (click)="gotoAddProduct()" >Add Product</button>
-  <button class="btn btn-success" (click)="gotoShowProduct()" > Products</button>
+<div class="m-4">
+  <button class="btn btn-success" (click)="gotoAddProduct()" *ngIf="isLogin">Add Product</button>
+  <button class="btn btn-success mx-2" (click)="gotoShowProduct()" *ngIf="isLogin"> Products</button>
+</div>
   <router-outlet></router-outlet>
 
 

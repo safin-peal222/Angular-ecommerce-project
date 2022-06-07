@@ -1,11 +1,13 @@
 <mat-toolbar color="primary" class="navbar">
     <div>E-commerce</div>
     <div>
-      <span><a routerLink="login">Login</a></span>
-      <span><a routerLink="register">Register</a></span>
+
       <span><a routerLink="my-cart">My Cart</a></span>
       
       <span><a routerLink="dashboard">Dashboard</a></span>
+      <span><a routerLink="login" *ngIf="!isLogin">Login</a></span>
+      <span><a routerLink="register" *ngIf="!isLogin">Register</a></span>
+      <span><a routerLink="login" *ngIf="isLogin" (click)="logout()">LogOut</a></span>
       
     </div>
   </mat-toolbar>
